@@ -9,6 +9,11 @@ import java.util.Map;
 import android.app.Activity;
 import android.os.Bundle;
 import android.view.Menu;
+import android.view.View;
+import android.view.animation.Animation;
+import android.view.animation.AnimationUtils;
+import android.widget.AdapterView;
+import android.widget.AdapterView.OnItemClickListener;
 import android.widget.GridView;
 import android.widget.SimpleAdapter;
 
@@ -39,6 +44,17 @@ public class CardActivity extends Activity {
 				R.layout.card,
 				new String[] { "value" },
 				new int[] { R.id.card_value }));
+
+		final Animation hyperspaceJump = AnimationUtils.loadAnimation(this, R.anim.choose_card);
+		cardGrid.setOnItemClickListener(new OnItemClickListener() {
+
+			@Override
+			public void onItemClick(AdapterView<?> parent, View v, int position,
+					long id) {
+				v.startAnimation(hyperspaceJump);
+			}
+
+		});
 	}
 
 	@Override
