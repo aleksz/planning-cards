@@ -19,9 +19,6 @@ import android.widget.TextView;
 
 public class CardsActivity extends Activity {
 
-	private static String[] CARDS = new String[] { "1", "2", "3", "5", "8",
-			"13", "?", "C", "~" };
-
 	@Override
 	protected void onCreate(Bundle savedInstanceState) {
 		super.onCreate(savedInstanceState);
@@ -34,7 +31,7 @@ public class CardsActivity extends Activity {
 
         List<Map<String, String>> gridData = new ArrayList<Map<String,String>>();
 
-        for (String cardValue : CARDS) {
+        for (String cardValue : getResources().getStringArray(R.array.fibo)) {
         	gridData.add(singletonMap("value", cardValue));
         }
 
