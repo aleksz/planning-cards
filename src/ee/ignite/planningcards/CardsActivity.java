@@ -41,7 +41,7 @@ public class CardsActivity extends Activity {
 		cardGrid.setAdapter(new SimpleAdapter(
 				this,
 				gridData,
-				R.layout.card,
+				R.layout.card_icon,
 				new String[] { "value" },
 				new int[] { R.id.card_value }));
 
