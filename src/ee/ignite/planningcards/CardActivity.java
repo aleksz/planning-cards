@@ -1,12 +1,18 @@
 package ee.ignite.planningcards;
 
+import java.util.ArrayList;
+import java.util.List;
+
 import android.annotation.TargetApi;
 import android.app.Activity;
 import android.os.Build;
 import android.os.Bundle;
 import android.support.v4.app.NavUtils;
+import android.support.v4.view.ViewPager;
+import android.view.LayoutInflater;
 import android.view.Menu;
 import android.view.MenuItem;
+import android.view.View;
 import android.widget.TextView;
 
 public class CardActivity extends Activity {
@@ -14,10 +20,36 @@ public class CardActivity extends Activity {
 	@Override
 	protected void onCreate(Bundle savedInstanceState) {
 		super.onCreate(savedInstanceState);
-		setContentView(R.layout.card);
 		setupActionBar();
-		TextView valueView = (TextView) findViewById(R.id.card_value);
-		valueView.setText(getIntent().getStringExtra("value"));
+
+		LayoutInflater inflater = LayoutInflater.from(this);
+		List<View> pages = new ArrayList<View>();
+		int selectedCardIndex = 0;
+		String[] allCardValues = getResources().getStringArray(R.array.fibo);
+
+		for (int i = 0; i < allCardValues.length; i++) {
+
+			String cardValue = allCardValues[i];
+
+			if (cardValue.equals(getIntent().getStringExtra("value"))) {
+				selectedCardIndex = i;
+			}
+
+			pages.add(buildOneCard(cardValue, inflater));
+		}
+
+		CardPagerAdapter cardPagerAdapter = new CardPagerAdapter(pages);
+		ViewPager viewPager = new ViewPager(this);
+		viewPager.setAdapter(cardPagerAdapter);
+		viewPager.setCurrentItem(selectedCardIndex);
+		setContentView(viewPager);
+	}
+
+	private View buildOneCard(String value, LayoutInflater inflater) {
+		View cardLayout = inflater.inflate(R.layout.card, null);
+		TextView valueView = (TextView) cardLayout.findViewById(R.id.card_value);
+		valueView.setText(value);
+		return cardLayout;
 	}
 
 	/**
