@@ -24,4 +24,10 @@
         android:shadowDy="10"
         android:textIsSelectable="false" />
 
+    <ImageView
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignBottom="@+id/card_value"
+        android:src="@drawable/ignite_logo_white"/>
+
 </RelativeLayout>
