@@ -1,41 +1,23 @@
 <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
+    style="@style/CardBackground"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:gravity="center"
-    android:background="@android:color/black"
-    android:paddingTop="0dp"
-    android:paddingBottom="0dp"
-    android:paddingLeft="2dp"
-    android:paddingRight="2dp"
     tools:context=".CardActivity" >
 
-	<RelativeLayout
-		android:background="@drawable/card_background"
-		android:layout_width="match_parent"
-		android:layout_height="match_parent"
-		android:gravity="center">
+    <TextView
+        style="@style/CardValue"
+        android:id="@+id/card_value"
+        android:textSize="100pt"
+        android:shadowRadius="10"
+        android:shadowDx="10"
+        android:shadowDy="10"
+        android:textIsSelectable="false" />
 
-	    <TextView
-	        android:id="@+id/card_value"
-	        android:layout_width="fill_parent"
-	        android:layout_height="wrap_content"
-	        android:layout_centerHorizontal="true"
-	        android:gravity="center"
-	        android:textSize="100pt"
-	        android:textColor="@android:color/white"
-	        android:shadowColor="#aa4213"
-	        android:shadowRadius="10"
-	        android:shadowDx="10"
-	        android:shadowDy="10"
-	        android:textIsSelectable="false" />
-
-	    <ImageView
-	        android:layout_width="fill_parent"
-	        android:layout_height="wrap_content"
-	        android:layout_alignBottom="@+id/card_value"
-	        android:src="@drawable/ignite_logo_white"/>
-
-    </RelativeLayout>
+    <ImageView
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignBottom="@+id/card_value"
+        android:src="@drawable/ignite_logo_white"/>
 
 </RelativeLayout>

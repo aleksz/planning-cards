@@ -9,4 +9,8 @@
         android:gradientRadius="600"
         android:type="radial" />
 
+    <stroke
+        android:width="2dp"
+        android:color="#000000" />
+
 </shape>
