@@ -4,4 +4,6 @@
     <dimen name="activity_horizontal_margin">16dp</dimen>
     <dimen name="activity_vertical_margin">16dp</dimen>
 
+    <item name="card_background_gradient_radius" format="float" type="dimen">600</item>
+
 </resources>

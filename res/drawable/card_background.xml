@@ -6,7 +6,7 @@
     <gradient
         android:startColor="#E37222"
         android:endColor="#782327"
-        android:gradientRadius="600"
+        android:gradientRadius="@dimen/card_background_gradient_radius"
         android:type="radial" />
 
     <stroke
