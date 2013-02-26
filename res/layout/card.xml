@@ -8,7 +8,7 @@
     <TextView
         style="@style/CardValue"
         android:id="@+id/card_value"
-        android:textSize="100pt"
+        android:textSize="@dimen/card_text_size"
         android:shadowRadius="10"
         android:shadowDx="10"
         android:shadowDy="10"
