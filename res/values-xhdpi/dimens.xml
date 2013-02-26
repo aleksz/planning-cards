@@ -1,0 +1,6 @@
+<resources>
+
+    <item name="card_background_gradient_radius" format="float" type="dimen">800</item>
+    <item name="card_icon_background_gradient_radius" format="float" type="dimen">150</item>
+
+</resources>
