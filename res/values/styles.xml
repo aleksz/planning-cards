@@ -33,4 +33,13 @@
         <item name="android:gravity">center</item>
     </style>
 
+    <style name="CardIconBackground" parent="CardBackground">
+        <item name="android:background">@drawable/card_icon_background</item>
+    </style>
+
+    <color name="CardBackground.Gradient.Start">#E37222</color>
+    <color name="CardBackground.Gradient.End">#782327</color>
+    <color name="CardBackground.Border">#000000</color>
+    <dimen name="CardBackground.Border">2dp</dimen>
+
 </resources>
