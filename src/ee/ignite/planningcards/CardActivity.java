@@ -12,6 +12,7 @@ import android.support.v4.view.ViewPager;
 import android.view.LayoutInflater;
 import android.view.MenuItem;
 import android.view.View;
+import android.widget.ImageView;
 import android.widget.TextView;
 
 public class CardActivity extends Activity {
@@ -48,6 +49,15 @@ public class CardActivity extends Activity {
 		View cardLayout = inflater.inflate(R.layout.card, null);
 		TextView valueView = (TextView) cardLayout.findViewById(R.id.card_value);
 		valueView.setText(value);
+
+		if ("C".equalsIgnoreCase(value)) {
+			ImageView imgView = (ImageView) cardLayout.findViewById(R.id.card_img);
+			imgView.setImageResource(R.drawable.cup);
+			imgView.setVisibility(View.VISIBLE);
+		} else {
+			valueView.setVisibility(View.VISIBLE);
+		}
+
 		return cardLayout;
 	}
 

@@ -5,19 +5,35 @@
     android:layout_height="match_parent"
     tools:context=".CardActivity" >
 
-    <TextView
-        style="@style/CardValue"
-        android:id="@+id/card_value"
-        android:textSize="@dimen/card_text_size"
-        android:shadowRadius="10"
-        android:shadowDx="10"
-        android:shadowDy="10"
-        android:textIsSelectable="false" />
+    <RelativeLayout
+        android:layout_width="fill_parent"
+   		android:layout_height="fill_parent"
+   		android:layout_alignParentTop="true">
+
+	    <TextView
+	        style="@style/CardValue"
+	        android:id="@+id/card_value"
+	        android:textSize="@dimen/card_text_size"
+	        android:shadowRadius="10"
+	        android:shadowDx="10"
+	        android:shadowDy="10"
+	        android:textIsSelectable="false"
+	        android:layout_centerInParent="true"
+	        android:visibility="gone" />
+
+	    <ImageView
+	        android:id="@+id/card_img"
+	        android:layout_width="fill_parent"
+	    	android:layout_height="@dimen/card_text_size"
+	    	android:visibility="gone"
+	    	android:layout_centerInParent="true"/>
+    </RelativeLayout>
 
     <ImageView
         android:layout_width="fill_parent"
         android:layout_height="wrap_content"
-        android:layout_alignBottom="@+id/card_value"
+        android:layout_alignParentBottom="true"
+        android:layout_marginBottom="@dimen/activity_vertical_margin"
         android:src="@drawable/ignite_logo_white"/>
 
 </RelativeLayout>

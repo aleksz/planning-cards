@@ -1,8 +1,9 @@
-<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
     style="@style/CardIconBackground"
     android:layout_width="@dimen/card_icon_size"
     android:layout_height="@dimen/card_icon_size"
+    android:gravity="center"
     tools:context=".CardsActivity" >
 
     <TextView
@@ -12,6 +13,14 @@
         android:shadowRadius="2"
         android:shadowDx="2"
         android:shadowDy="2"
-        android:textIsSelectable="false" />
+        android:textIsSelectable="false"
+        android:visibility="gone" />
 
-</RelativeLayout>
+    <ImageView
+        android:id="@+id/card_img"
+        android:layout_width="@dimen/card_icon_text_size"
+    	android:layout_height="@dimen/card_icon_text_size"
+    	android:layout_gravity="center"
+    	android:visibility="gone"/>
+
+</LinearLayout>
