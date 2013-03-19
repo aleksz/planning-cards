@@ -24,7 +24,7 @@
 	    <ImageView
 	        android:id="@+id/card_img"
 	        android:layout_width="fill_parent"
-	    	android:layout_height="@dimen/card_text_size"
+	    	android:layout_height="@dimen/card_cup_size"
 	    	android:visibility="gone"
 	    	android:layout_centerInParent="true"/>
     </RelativeLayout>

@@ -3,5 +3,6 @@
     <dimen name="card_icon_size">190dp</dimen>
     <dimen name="card_icon_text_size">100dp</dimen>
     <dimen name="card_text_size">500dp</dimen>
+    <dimen name="card_cup_size">358dp</dimen>
 
 </resources>
