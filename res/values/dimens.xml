@@ -6,7 +6,7 @@
 
     <dimen name="card_icon_size">90dp</dimen>
     <dimen name="card_icon_text_size">40dp</dimen>
-    <dimen name="card_text_size">280dp</dimen>
+    <dimen name="card_text_size">200dp</dimen>
     <dimen name="card_cup_size">200dp</dimen>
 
     <item name="card_background_gradient_radius" format="float" type="dimen">600</item>

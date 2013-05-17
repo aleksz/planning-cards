@@ -22,10 +22,10 @@ public class CardActivity extends Activity {
 		super.onCreate(savedInstanceState);
 		setupActionBar();
 
-		LayoutInflater inflater = LayoutInflater.from(this);
 		List<View> pages = new ArrayList<View>();
 		int selectedCardIndex = 0;
-		String[] allCardValues = getResources().getStringArray(R.array.fibo);
+		String[] allCardValues = getResources().getStringArray(
+				CardsPreferenceHelper.getCardsDeckValues(this));
 
 		for (int i = 0; i < allCardValues.length; i++) {
 
@@ -35,12 +35,11 @@ public class CardActivity extends Activity {
 				selectedCardIndex = i;
 			}
 
-			pages.add(buildOneCard(cardValue, inflater));
+			pages.add(buildOneCard(cardValue, LayoutInflater.from(this)));
 		}
-
-		CardPagerAdapter cardPagerAdapter = new CardPagerAdapter(pages);
+		
 		ViewPager viewPager = new ViewPager(this);
-		viewPager.setAdapter(cardPagerAdapter);
+		viewPager.setAdapter(new CardPagerAdapter(pages));
 		viewPager.setCurrentItem(selectedCardIndex);
 		setContentView(viewPager);
 	}
@@ -48,13 +47,13 @@ public class CardActivity extends Activity {
 	private View buildOneCard(String value, LayoutInflater inflater) {
 		View cardLayout = inflater.inflate(R.layout.card, null);
 		TextView valueView = (TextView) cardLayout.findViewById(R.id.card_value);
-		valueView.setText(value);
 
 		if ("C".equalsIgnoreCase(value)) {
 			ImageView imgView = (ImageView) cardLayout.findViewById(R.id.card_img);
 			imgView.setImageResource(R.drawable.cup);
 			imgView.setVisibility(View.VISIBLE);
 		} else {
+			valueView.setText(value);
 			valueView.setVisibility(View.VISIBLE);
 		}
 
