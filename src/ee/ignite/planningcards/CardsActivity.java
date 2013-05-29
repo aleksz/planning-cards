@@ -9,6 +9,7 @@ import android.app.Activity;
 import android.content.Context;
 import android.content.Intent;
 import android.os.Bundle;
+import android.preference.PreferenceManager;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
@@ -52,12 +53,6 @@ public class CardsActivity extends Activity {
 	}
 	
 	@Override
-	protected void onResume() {
-		super.onResume();
-		configureCards();
-	}
-
-	@Override
 	public boolean onCreateOptionsMenu(Menu menu) {
 		getMenuInflater().inflate(R.menu.settings, menu);
 		return true;
@@ -66,9 +61,14 @@ public class CardsActivity extends Activity {
 	@Override
 	public boolean onOptionsItemSelected(MenuItem item) {
 		switch (item.getItemId()) {
-		case R.id.menu_settings:
-			startActivity(new Intent(this, CardsPreferenceActivity.class));
-			return true;
+        case R.id.menu_fibo:
+            PreferenceManager.getDefaultSharedPreferences(this).edit().putBoolean("shirtSizes", false).commit();
+            configureCards();
+            return true;
+        case R.id.menu_t_shirt:
+            PreferenceManager.getDefaultSharedPreferences(this).edit().putBoolean("shirtSizes", true).commit();
+            configureCards();
+            return true;
 		default:
 			return super.onOptionsItemSelected(item);
 		}

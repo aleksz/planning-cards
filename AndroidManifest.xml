@@ -31,7 +31,6 @@
                 android:name="android.support.PARENT_ACTIVITY"
                 android:value="ee.ignite.planningcards.CardsActivity" />
         </activity>
-        <activity android:name=".CardsPreferenceActivity" />
     </application>
 
 </manifest>

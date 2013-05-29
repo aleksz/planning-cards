@@ -2,6 +2,7 @@
 <resources>
 
     <string name="app_name">Ignite poker</string>
-    <string name="action_settings">Settings</string>
+    <string name="fibo">Fibo</string>
+    <string name="t_shirt">T-Shirt</string>
 
 </resources>
