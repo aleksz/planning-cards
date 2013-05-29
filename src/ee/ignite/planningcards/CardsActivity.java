@@ -51,8 +51,14 @@ public class CardsActivity extends Activity {
 		setContentView(R.layout.cards);
 		configureCards();
 	}
-	
-	@Override
+
+    @Override
+    protected void onResume() {
+        super.onResume();
+        configureCards();
+    }
+
+    @Override
 	public boolean onCreateOptionsMenu(Menu menu) {
 		getMenuInflater().inflate(R.menu.settings, menu);
 		return true;

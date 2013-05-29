@@ -33,6 +33,12 @@ public class CardActivity extends Activity {
 		setContentView(getViewPager());
 	}
 
+    @Override
+    protected void onResume() {
+        super.onResume();
+        setContentView(getViewPager());
+    }
+
     private ViewPager getViewPager() {
         List<View> pages = new ArrayList<View>();
         int selectedCardIndex = 0;
