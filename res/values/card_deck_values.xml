@@ -14,13 +14,15 @@
     </string-array>
     
     <string-array name="tShirt">
+        <item>XS</item>
         <item>S</item>
         <item>M</item>
         <item>L</item>
         <item>XL</item>
-        <item>∞</item>
+        <item>XXL</item>
         <item>\?</item>
         <item>C</item>
+        <item>∞</item>
     </string-array>
 
 </resources>
